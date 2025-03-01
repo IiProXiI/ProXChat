@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flutter Chat App</title>
+    <title>ProXChat</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage.js"></script>
-    <script defer src="app.js"></script>
 </head>
 <body>
-    <!-- شاشة تسجيل الدخول -->
-    <div id="login-screen" class="screen">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Enter your username">
-        <input type="password" id="password" placeholder="Enter your password">
-        <button id="login-button">Login</button>
+
+    <div class="container">
+        <h1>Welcome to ProXChat!</h1>
+        <p>Join us and start chatting now.</p>
+        
+        <!-- Button to navigate to Register Page -->
+        <button id="register-btn" onclick="location.href='register.html'">Register</button>
     </div>
 
-    <!-- شاشة المحادثات -->
-    <div id="chat-screen" class="screen" style="display:none;">
-        <h2>Chat</h2>
-        <div id="message-list"></div>
-        <textarea id="message-input" placeholder="Type a message..."></textarea>
-        <button id="send-message-button">Send</button>
-        <button id="profile-button">Profile</button>
-    </div>
-
-    <!-- شاشة الملف الشخصي -->
-    <div id="profile-screen" class="screen" style="display:none;">
-        <h2>Profile</h2>
-        <input type="text" id="new-username" placeholder="Change your username">
-        <input type="file" id="profile-picture">
-        <button id="save-profile-button">Save Profile</button>
-        <button id="back-to-chat-button">Back to Chat</button>
-    </div>
+    <script src="app.js"></script>
 </body>
 </html>
