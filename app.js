@@ -1,31 +1,39 @@
-// app.js
-document.addEventListener('DOMContentLoaded', function() {
-    const registerForm = document.getElementById('register-form');
+let currentUser = null;
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
     
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Get the username and password values
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Validate input
-            if (username && password) {
-                // Save user data to localStorage (simulating a registration)
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password);
-
-                // Redirect to the home page after successful registration
-                window.location.href = 'app.html';
-            } else {
-                alert('Please fill in all fields.');
-            }
-        });
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    // Simple user validation
+    if (username && password) {
+        currentUser = { username, password };
+        document.getElementById('register-page').style.display = 'none';
+        document.getElementById('chat-page').style.display = 'block';
+        document.getElementById('username-display').textContent = username;
+    } else {
+        alert("Please fill out all fields!");
     }
+});
+
+document.getElementById('send-message').addEventListener('click', function() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
     
-    // Redirect to login if no username is found in localStorage
-    if (window.location.pathname === '/app.html' && !localStorage.getItem('username')) {
-        window.location.href = 'register.html';
+    if (message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.textContent = message;
+        document.getElementById('messages').appendChild(messageElement);
+        
+        messageInput.value = '';  // Clear input after sending
+    }
+});
+
+// Allow pressing Enter to send message
+document.getElementById('message-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        document.getElementById('send-message').click();
     }
 });
