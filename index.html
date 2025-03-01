@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProXChat</title>
+    <title>ProXChat - Chat Application</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <!-- Register Page -->
+        <div id="register-page" class="page">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
 
-    <div class="container">
-        <h1>Welcome to ProXChat!</h1>
-        <p>Join us and start chatting now.</p>
-        
-        <!-- Button to navigate to Register Page -->
-        <button id="register-btn" onclick="location.href='register.html'">Register</button>
+        <!-- Chat Page -->
+        <div id="chat-page" class="page">
+            <h2>Welcome to ProXChat, <span id="username-display"></span></h2>
+            <div id="chat-container">
+                <div id="messages">
+                    <!-- Messages will be shown here -->
+                </div>
+                <textarea id="message-input" placeholder="Type your message here"></textarea>
+                <button id="send-message">Send</button>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
