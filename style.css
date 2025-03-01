@@ -1,49 +1,70 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #36393f;
+    color: white;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    margin-top: 100px;
+}
+
+#register-page {
+    display: block;
+}
+
+input, textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2f3136;
+    color: white;
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
     padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7289da;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5b6eae;
 }
 
-.register-container {
-    text-align: center;
-    margin-top: 50px;
+#messages {
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-input {
+.message {
+    background-color: #202225;
     padding: 10px;
-    margin: 5px;
-    font-size: 16px;
+    margin: 5px 0;
+    border-radius: 5px;
 }
 
-form {
-    display: inline-block;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.app-container {
-    text-align: center;
-    margin-top: 50px;
+#chat-container {
+    display: flex;
+    flex-direction: column;
 }
